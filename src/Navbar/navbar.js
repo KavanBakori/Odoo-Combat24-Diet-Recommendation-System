@@ -67,6 +67,7 @@ import './navbar.css';
 import { useAuth0 } from '@auth0/auth0-react';
 
 
+
 const NavBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
@@ -74,7 +75,6 @@ const NavBar = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg fixed w-full z-10">
@@ -105,7 +105,7 @@ const NavBar = () => {
               {isDropdownOpen && (
                 <div className="dropdown-content">
                   <p style={{ textAlign: 'center' }}>Welcome, {user?.name}</p>
-                  <a href='popupform' style={{ cursor: 'pointer' }}>My Profile</a>
+                  <a href='profile' style={{ cursor: 'pointer' }}>My Profile</a>
                   <a
                     href="/"
                     style={{ cursor: 'pointer' }}
