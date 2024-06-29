@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-
-
+import { useNavigate } from 'react-router-dom';
 
 
 const Popupform = () => {
+  const navigate=useNavigate();
   const { user } = useAuth0();
   const [form, setForm] = useState({});
 
@@ -38,6 +38,7 @@ const Popupform = () => {
       console.error('Error submitting suggestion:', error);
       console.log('An error occurred while submitting your suggestion');
     }
+    navigate('/')
   };
 
   const inputClasses = "peer w-full h-12 px-4 border-2 border-gray-300 rounded-lg text-gray-900 placeholder-transparent focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-600 transition-all duration-300 ease-in-out";
@@ -47,7 +48,7 @@ const Popupform = () => {
   return (
     <>
       {/* <br /><br /><br /> */}
-      <div className="max-w-4xl mx-auto p-8 bg-white rounded-2xl shadow-2xl transition-all duration-300 ease-in-out hover:shadow-3xl" style={{}}>
+      <div className="max-w-4xl mx-auto p-8 bg-white rounded-2xl shadow-2xl transition-all duration-300 ease-in-out hover:shadow-3xl">
         <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">Your Health Profile</h2>
         <h3>Name: {user?.name}</h3><span>Email: {user?.email}</span>
         <br /><br />
