@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../Navbar/navbar'
 
-const login = () => {
+const home = () => {
   return (
     <>
     <Navbar/>
@@ -9,4 +9,4 @@ const login = () => {
   )
 }
 
-export default login;
+export default home
